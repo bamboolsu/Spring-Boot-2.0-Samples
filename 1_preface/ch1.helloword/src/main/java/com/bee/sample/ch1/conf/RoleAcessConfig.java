@@ -29,6 +29,7 @@ public class RoleAcessConfig {
 	 */
 	@org.aspectj.lang.annotation.Around("within(@org.springframework.stereotype.Controller *) && @annotation(function)")
 	public Object functionAccessCheck(final ProceedingJoinPoint pjp, Function function) throws Throwable {
+		System.out.println("xxxxxx leo.......所有使用Function的注解的方法，且在Controller注解标注的类里  begin");
 		if (function != null) {
 			String functionName = function.value();
 			if (!canAccess(functionName)) {
@@ -38,6 +39,7 @@ public class RoleAcessConfig {
 		}
 		// 继续处理原有调用
 		Object o = pjp.proceed();
+		System.out.println("xxxxxx leo.......所有使用Function的注解的方法，且在Controller注解标注的类里 end");
 		return o;
 
 	}
@@ -59,11 +61,14 @@ public class RoleAcessConfig {
 	 */
 	@Around("@within(org.springframework.stereotype.Controller) ")
 	public Object simpleAop(final ProceedingJoinPoint pjp) throws Throwable {
+		System.out.println("xxxxxx leo.......所有Controller方法  begin ");
 		try {
 			Object[] args = pjp.getArgs();
+
 			System.out.println("args:" + Arrays.asList(args));
 			Object o = pjp.proceed();
 			System.out.println("return :" + o);
+			System.out.println("xxxxxx leo.......所有Controller方法 end");
 			return o;
 
 		} catch (Throwable e) {

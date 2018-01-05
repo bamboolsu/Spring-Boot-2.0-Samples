@@ -12,11 +12,20 @@ import com.bee.sample.ch1.annotation.Function;
  */
 @Controller
 public class HelloworldController {
-	
-	
+
+
+	/*
+	xxxxxx leo.......所有使用Function的注解的方法，且在Controller注解标注的类里  begin
+	xxxxxx leo.......所有Controller方法  begin
+	args:[springboot]
+			return :hello springboot
+	xxxxxx leo.......所有Controller方法 end
+	xxxxxx leo.......所有使用Function的注解的方法，且在Controller注解标注的类里 end
+	*/
 	@RequestMapping("/sayhello.html")
 	@Function()
 	public @ResponseBody String say(String name){
+		System.out.println("xxxxxx leo.......sayhello.html");
 		return "hello "+name;
 	}
 }
