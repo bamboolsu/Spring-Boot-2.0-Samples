@@ -6,11 +6,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HelloworldController {
+	//http://127.0.0.1:8080/sayhello.html?name=springboot
 	@RequestMapping("/sayhello.html")
 	public @ResponseBody String say(){
-		return "hello world";
+		return "hello ";
 	}
-	
+
+	//http://127.0.0.1:8080/say.html?name=springboot
 	@RequestMapping("/say.html")
 	public @ResponseBody String say(String name){
 		return "hello world "+name;
