@@ -1,12 +1,11 @@
 package com.bee.sample.ch3.controller.form;
 
+import com.bee.sample.ch3.controller.validate.WorkOverTime;
+import org.hibernate.validator.constraints.Email;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.Email;
-
-import com.bee.sample.ch3.controller.validate.WorkOverTime;
 
 public class WorkInfoForm {
 	

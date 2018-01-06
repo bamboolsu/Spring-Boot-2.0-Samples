@@ -1,5 +1,8 @@
 <html>
 <body>
+this beetl!
+<p/>
+${user.
 ${user.id}
 <p/>
 ${user.name}

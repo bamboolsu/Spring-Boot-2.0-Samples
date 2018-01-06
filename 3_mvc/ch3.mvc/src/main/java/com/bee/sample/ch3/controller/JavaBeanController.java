@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.*;
 public class JavaBeanController {
 	
 	@Autowired UserService userService;
-	
+
+
+	//http://127.0.0.1:8080/javabean/update.json
 	@GetMapping(path = "/update.json")
 	@ResponseBody
 	public String updateUser(User user) {

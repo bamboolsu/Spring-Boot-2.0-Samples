@@ -23,15 +23,17 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @RequestMapping("/json")
 public class JsonController {
 	@Autowired UserService userService;
-	
-	
-	
+
+
+	//http://127.0.0.1:8080/json/user/1.json
 	@GetMapping("/user/{id}.json")
 	public @ResponseBody User showUserInfo( @PathVariable Long id){
 		User user = userService.getUserById(id);
 		return user;
 	}
-	
+
+	// http://127.0.0.1:8080/json/now.json
+	// {"time":"2018-01-06 12:49:17"}
 	@GetMapping("/now.json")
 	public @ResponseBody Map datetime(){
 		//JacksonConfig 配置了序列化日期
@@ -39,6 +41,9 @@ public class JsonController {
 		map.put("time", new Date());
 		return map;
 	}
+
+	// http://127.0.0.1:8080/json/date.json?date=2017-09-20 21:30:15
+	// {"time":"2017-09-20 21:30:15"}
 	/**
 	 * 比如:json/date.json?date=2017-09-20 21:30:15
 	 * @param date

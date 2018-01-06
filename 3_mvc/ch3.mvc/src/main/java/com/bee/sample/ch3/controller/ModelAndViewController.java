@@ -16,6 +16,8 @@ import com.bee.sample.ch3.service.UserService;
 public class ModelAndViewController {
 	
 	@Autowired UserService userService;
+
+	//http://127.0.0.1:8080/model/1/get.html
 	/**
 	 * 一个beetl模板测试。因为视图扩展名字是btl
 	 * @param userId
@@ -29,6 +31,9 @@ public class ModelAndViewController {
 		 model.addAttribute("user", userInfo);
 		 return "/userInfo.btl";
 	}
+
+
+	// http://127.0.0.1:8080/model/1/get2.html
 	/**
 	 * 使用freemaker模板测试，freemaker会寻找/userInfo.ftl 模板
 	 * @param userId
