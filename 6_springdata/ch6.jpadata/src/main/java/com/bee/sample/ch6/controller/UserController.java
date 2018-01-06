@@ -20,7 +20,7 @@ public class UserController {
 	@RequestMapping("/finduser.html")
 	public @ResponseBody String findUser(int userId){
 		User user =  userService.findUser(userId);
-		
+		System.out.printf("userid is: " + userId + " , user is: " + userId);
 		return user.getName();
 	}
 	@RequestMapping("/adduser.html")
