@@ -1,17 +1,11 @@
 package com.bee.sample.ch3.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.bee.sample.ch3.controller.form.OrderPostForm;
 import com.bee.sample.ch3.entity.User;
 import com.bee.sample.ch3.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 /**
  * 通过form提交的各种映射举例
  * @author lijiazhi
@@ -30,7 +24,8 @@ public class JavaBeanController {
 		System.out.println(user.getId());
 		return "success";
 	}
-	
+
+	//http://127.0.0.1:8080/javabean/update2.json?id=12&name=jack
 	@GetMapping(path = "/update2.json")
 	@ResponseBody
 	public String updateUser2(Integer id, String name) {
@@ -39,7 +34,8 @@ public class JavaBeanController {
 		return "success";
 	}
 	
-	
+	//http://127.0.0.1:8080/javabean/update3.json?id=12&name=jack
+	//http://127.0.0.1:8080/javabean/update3.json?name=jack    ErrorCode:400  Message:Required Integer parameter 'id' is not present
 	@GetMapping(path = "/update3.json")
 	@ResponseBody
 	public String updateUser3(@RequestParam(name="id",required=true) Integer id, String name) {
@@ -47,6 +43,7 @@ public class JavaBeanController {
 		System.out.println(name);
 		return "success";
 	}
+
 
 	@PostMapping(path = "/saveOrder.json")
 	@ResponseBody

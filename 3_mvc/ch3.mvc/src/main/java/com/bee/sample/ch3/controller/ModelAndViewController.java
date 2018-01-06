@@ -20,7 +20,7 @@ public class ModelAndViewController {
 	 * 一个beetl模板测试。因为视图扩展名字是btl
 	 * @param userId
 	 * @param model
-	 * @return
+	 * @return+
 	 */
 	@GetMapping(path = "/{userId}/get.html")
 	public String getUser(@PathVariable Long userId,Model model) {
