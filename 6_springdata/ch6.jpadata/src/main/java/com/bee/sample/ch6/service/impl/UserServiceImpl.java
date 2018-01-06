@@ -21,7 +21,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.bee.sample.ch6.dao.UserRepository;
+import com.bee.sample.ch6.dao.UserDao;
 import com.bee.sample.ch6.entity.Department;
 import com.bee.sample.ch6.entity.User;
 import com.bee.sample.ch6.service.UserService;
@@ -30,7 +30,7 @@ import com.bee.sample.ch6.service.UserService;
 @Transactional
 public class UserServiceImpl implements UserService {
 	@Autowired
-	UserRepository userDao;
+	UserDao userDao;
 	
 	@Autowired
 	EntityManager em;

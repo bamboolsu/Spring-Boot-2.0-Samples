@@ -1,1 +1,13 @@
 jpa 算是官方推荐的，  就是 hibernate， 用起来方便， 通用；
+
+
+
+HikariCP  类似与 c3p0  与  druid 的数据源提供者
+
+
+
+
+
+
+
+
