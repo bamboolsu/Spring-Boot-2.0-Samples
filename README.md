@@ -3,6 +3,19 @@
 《Spring Boot 2精髓：从构建小系统到架构分布式大系统》
 配套代码
 
+
+
+约定优先， 有很多约定的值
+https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+
+
+
+启动时，默认是8080 端口， 可以通过 application.yml 进行配置
+
+
+
+
+
 curl 用于测试验证：
 -d  参数   发起post 请求
 curl "http://127.0.0.1:8080/javabean/update3.json" -d "id=12&name=jack"
