@@ -19,7 +19,7 @@ public class PropertyController {
 	
 	@RequestMapping("/sayhello.html")
 	public @ResponseBody String say(){
-		log.info("acess");
+		log.info("access");
 		return "hello world";
 	}
 	
@@ -27,17 +27,17 @@ public class PropertyController {
 	@RequestMapping("/showenv.html")
 	public @ResponseBody String env(){
 		
-		return "port:"+envConfig.getServerPort();
+		return "port:"+ envConfig.getServerPort() + "  " + envConfig.getEnv();
 	}
 	
 	@RequestMapping("/showvalue.html")
 	public @ResponseBody String value(@Value("${server.port}")  int port){
-		return "port:"+port;
+		return "showvalue port:"+port;
 	}
 	
 	@RequestMapping("/showserver.html")
 	public @ResponseBody String value(){
 		
-		return "port:"+serverConfig.getPort()+" contxtPath:"+serverConfig.getServlet().getPath();
+		return "showserver  port:"+serverConfig.getPort()+" contxtPath:"+serverConfig.getServlet().getPath();
 	}
 }

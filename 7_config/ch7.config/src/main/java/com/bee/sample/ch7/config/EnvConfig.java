@@ -12,11 +12,17 @@ import org.springframework.core.env.Environment;
 @Configuration
 @ConditionalOnJava(range=Range.EQUAL_OR_NEWER,value=JavaVersion.EIGHT)
 public class EnvConfig implements BeanPostProcessor{
+	//Environment shi spring boot 最早初始化的一个类，　因此可以　用在　　Spring应用的任何地方
 	@Autowired private  Environment  env;
+
 	public int getServerPort(){
 		return env.getProperty("server.port", Integer.class);
 	}
-	
+
+	public String getEnv(){
+		return "server port is: " + env.getProperty("server.port", Integer.class).toString() + "JAVA_HOME IS: " + env.getProperty("JAVA_HOME");
+	}
+
 	 public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
 		 if(bean instanceof URLTestBean){
 			 System.out.println("=========== "+beanName);
